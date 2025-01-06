@@ -131,12 +131,6 @@ truffle test
 
 ---
 
-## 📜 License
-
-This project is licensed under the ISC License. See the [LICENSE](./LICENSE) file for more details.
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome! If you’d like to make improvements, please fork this repository and submit a pull request.
