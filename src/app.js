@@ -106,26 +106,27 @@ App = {
   },
   createTask: async () => {
     try {
-      App.setLoading(true)
-      const content = $('#newTask').val()
-      await App.todoList.createTask(content)
-      window.location.reload()
+        App.setLoading(true)
+        const content = $('#newTask').val()
+        await App.todoList.createTask(content, { from: App.account })  // Add the from address here
+        window.location.reload()
     } catch (error) {
-      console.error('Error creating task:', error);
-      App.setLoading(false)
+        console.error('Error creating task:', error);
+        App.setLoading(false)
     }
   },
-  toggleCompleted: async (e) => {
+
+toggleCompleted: async (e) => {
     try {
-      App.setLoading(true)
-      const taskId = e.target.name
-      await App.todoList.toggleCompleted(taskId)
-      window.location.reload()
+        App.setLoading(true)
+        const taskId = e.target.name
+        await App.todoList.toggleCompleted(taskId, { from: App.account })  // Add the from address here too
+        window.location.reload()
     } catch (error) {
-      console.error('Error toggling task:', error);
-      App.setLoading(false)
+        console.error('Error toggling task:', error);
+        App.setLoading(false)
     }
-  },
+},
   setLoading: (boolean) => {
     App.loading = boolean
     const loader = $('#loader')
